@@ -1,0 +1,6 @@
+{
+  "name": "Cartório do Brasileiro",
+  "description": "Assessoria documental para brasileiros nos Estados Unidos. Sua ponte de confiança com o Brasil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
