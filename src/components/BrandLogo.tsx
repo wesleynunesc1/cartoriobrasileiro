@@ -9,7 +9,7 @@ interface BrandLogoProps {
 
 /**
  * CB Monogram SVG Icon
- * Monograma entrelaçado C e B com máxima fidelidade vetorial à identidade oficial
+ * Monograma entrelaçado C e B oficial
  */
 export const CBMonogram: React.FC<{
   className?: string;
@@ -26,7 +26,7 @@ export const CBMonogram: React.FC<{
       aria-label="Monograma CB - Cartório do Brasileiro"
     >
       <g fill={color || 'currentColor'}>
-        {/* Arco do C com terminais serifados clássicos */}
+        {/* Arco do C com terminação clássica */}
         <path
           d="M 52 10 C 26 10 10 28 10 52 C 10 76 26 92 52 92 C 64 92 73 87 79 79 L 74 74 C 69 80 61 84 52 84 C 32 84 20 70 20 52 C 20 34 32 18 52 18 C 61 18 69 22 74 28 L 79 23 C 73 15 64 10 52 10 Z"
         />
@@ -48,66 +48,44 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   const isDark = theme === 'dark';
   const isGold = theme === 'gold';
 
-  const primaryColor = isDark
-    ? '#FFFFFF'
-    : isGold
-    ? '#C6A166'
-    : '#0D1B3D'; // Azul-marinho profundo
-
-  const goldColor = isDark ? '#DFC89B' : '#C6A166'; // Dourado oficial
-
-  // Escala de tamanhos balanceados
+  // Escala de tamanhos para a imagem da logo
   const sizeConfig = {
-    sm: { height: 'h-8', monoSize: 32, titleSize: 'text-base sm:text-lg', subSize: 'text-[8.5px] sm:text-[9px] tracking-[0.24em]' },
-    md: { height: 'h-11', monoSize: 42, titleSize: 'text-xl sm:text-2xl', subSize: 'text-[10px] sm:text-[11px] tracking-[0.28em]' },
-    lg: { height: 'h-14', monoSize: 54, titleSize: 'text-2xl sm:text-3xl', subSize: 'text-[12px] sm:text-[13px] tracking-[0.32em]' },
-    xl: { height: 'h-20', monoSize: 76, titleSize: 'text-3xl sm:text-4xl', subSize: 'text-[14px] sm:text-[15px] tracking-[0.36em]' }
+    sm: { imgClass: 'h-8 sm:h-9 w-auto', monoSize: 32 },
+    md: { imgClass: 'h-10 sm:h-12 w-auto', monoSize: 44 },
+    lg: { imgClass: 'h-14 sm:h-16 w-auto', monoSize: 56 },
+    xl: { imgClass: 'h-20 sm:h-24 w-auto', monoSize: 80 }
   };
 
   const currentSize = sizeConfig[size];
 
   if (variant === 'monogram') {
+    const monoColor = isDark ? '#FFFFFF' : isGold ? '#C6A166' : '#0D1B3D';
     return (
       <div className={`inline-flex items-center justify-center ${className}`}>
-        <CBMonogram color={primaryColor} size={currentSize.monoSize} />
+        <CBMonogram color={monoColor} size={currentSize.monoSize} />
       </div>
     );
   }
 
   return (
     <div
-      className={`inline-flex items-center gap-3 select-none ${className}`}
+      className={`inline-flex items-center select-none ${className}`}
       role="banner"
       aria-label="Cartório do Brasileiro - Assessoria Documental"
     >
-      {/* Monograma CB à esquerda */}
-      <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-        <CBMonogram color={primaryColor} size={currentSize.monoSize} />
-      </div>
-
-      {/* Linha vertical divisora dourada elegante */}
-      <div
-        className={`w-[1.5px] h-8 sm:h-10 flex-shrink-0 self-center ${
-          isDark ? 'bg-[#DFC89B]/40' : 'bg-[#C6A166]/60'
+      <img
+        src="/logo.png"
+        alt="Cartório do Brasileiro - Assessoria Documental"
+        className={`${currentSize.imgClass} object-contain transition-transform duration-300 group-hover:scale-[1.02] ${
+          isDark
+            ? 'brightness-0 invert opacity-95 hover:opacity-100'
+            : isGold
+            ? 'sepia hue-rotate-15'
+            : ''
         }`}
-        aria-hidden="true"
+        loading="eager"
+        decoding="async"
       />
-
-      {/* Wordmark oficial à direita */}
-      <div className="flex flex-col justify-center leading-none">
-        <span
-          className={`font-serif font-semibold tracking-tight ${currentSize.titleSize}`}
-          style={{ color: primaryColor }}
-        >
-          Cartório do Brasileiro
-        </span>
-        <span
-          className={`font-sans font-bold uppercase mt-1 ${currentSize.subSize}`}
-          style={{ color: goldColor }}
-        >
-          Assessoria Documental
-        </span>
-      </div>
     </div>
   );
 };
