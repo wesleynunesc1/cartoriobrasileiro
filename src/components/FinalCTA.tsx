@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, MessageCircle, ShieldCheck } from 'lucide-react';
 import { BRAND_CONFIG, getWhatsAppUrl } from '../config/brand';
 import { CBMonogram } from './BrandLogo';
 
@@ -20,7 +20,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenTriage }) => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-[#C6A166]/40 mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-[#DFC89B]" />
+          <ShieldCheck className="w-3.5 h-3.5 text-[#DFC89B]" />
           <span className="text-[11px] font-bold tracking-[0.24em] text-[#DFC89B] uppercase">
             ATENDIMENTO PERSONALIZADO
           </span>

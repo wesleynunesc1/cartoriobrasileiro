@@ -9,7 +9,7 @@ interface BrandLogoProps {
 
 /**
  * CB Monogram SVG Icon
- * Recria o monograma entrelaçado C e B com máxima fidelidade vetorial
+ * Monograma entrelaçado C e B com máxima fidelidade vetorial à identidade oficial
  */
 export const CBMonogram: React.FC<{
   className?: string;
@@ -25,15 +25,14 @@ export const CBMonogram: React.FC<{
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Monograma CB - Cartório do Brasileiro"
     >
-      {/* Elegante Monograma C e B entrelaçados */}
       <g fill={color || 'currentColor'}>
-        {/* Arco do C */}
+        {/* Arco do C com terminais serifados clássicos */}
         <path
-          d="M 52 14 C 28 14 12 30 12 51 C 12 72 27 88 51 88 C 61 88 68 84 74 78 L 71 73 C 65 78 59 82 50 82 C 32 82 20 69 20 51 C 20 33 32 20 50 20 C 58 20 64 23 70 27 L 73 22 C 67 17 60 14 52 14 Z"
+          d="M 52 10 C 26 10 10 28 10 52 C 10 76 26 92 52 92 C 64 92 73 87 79 79 L 74 74 C 69 80 61 84 52 84 C 32 84 20 70 20 52 C 20 34 32 18 52 18 C 61 18 69 22 74 28 L 79 23 C 73 15 64 10 52 10 Z"
         />
         {/* Letra B entrelaçada */}
         <path
-          d="M 44 26 L 44 84 L 52 84 C 69 84 81 76 81 64 C 81 55 74 49 66 47 C 72 45 78 40 78 33 C 78 26 71 26 59 26 L 44 26 Z M 51 31 L 58 31 C 66 31 71 33 71 39 C 71 45 66 48 57 48 L 51 48 L 51 31 Z M 51 53 L 60 53 C 68 53 74 57 74 64 C 74 72 67 79 57 79 L 51 79 L 51 53 Z"
+          d="M 44 20 L 44 84 L 54 84 C 71 84 82 76 82 63 C 82 54 75 48 66 46 C 73 44 79 39 79 32 C 79 24 72 20 59 20 L 44 20 Z M 52 27 L 59 27 C 67 27 72 29 72 35 C 72 41 67 44 58 44 L 52 44 L 52 27 Z M 52 50 L 61 50 C 70 50 75 54 75 62 C 75 70 68 77 58 77 L 52 77 L 52 50 Z"
         />
       </g>
     </svg>
@@ -46,7 +45,6 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = '',
   size = 'md',
 }) => {
-  // Configuração de cores por tema
   const isDark = theme === 'dark';
   const isGold = theme === 'gold';
 
@@ -56,11 +54,11 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     ? '#C6A166'
     : '#0D1B3D'; // Azul-marinho profundo
 
-  const goldColor = '#C6A166'; // Dourado champagne oficial
+  const goldColor = isDark ? '#DFC89B' : '#C6A166'; // Dourado oficial
 
-  // Escala de tamanhos
+  // Escala de tamanhos balanceados
   const sizeConfig = {
-    sm: { height: 'h-8', monoSize: 32, titleSize: 'text-lg', subSize: 'text-[9px] tracking-[0.24em]' },
+    sm: { height: 'h-8', monoSize: 32, titleSize: 'text-base sm:text-lg', subSize: 'text-[8.5px] sm:text-[9px] tracking-[0.24em]' },
     md: { height: 'h-11', monoSize: 42, titleSize: 'text-xl sm:text-2xl', subSize: 'text-[10px] sm:text-[11px] tracking-[0.28em]' },
     lg: { height: 'h-14', monoSize: 54, titleSize: 'text-2xl sm:text-3xl', subSize: 'text-[12px] sm:text-[13px] tracking-[0.32em]' },
     xl: { height: 'h-20', monoSize: 76, titleSize: 'text-3xl sm:text-4xl', subSize: 'text-[14px] sm:text-[15px] tracking-[0.36em]' }
@@ -89,20 +87,22 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
       {/* Linha vertical divisora dourada elegante */}
       <div
-        className="w-[1px] h-8 sm:h-10 bg-[#C6A166]/50 flex-shrink-0 self-center"
+        className={`w-[1.5px] h-8 sm:h-10 flex-shrink-0 self-center ${
+          isDark ? 'bg-[#DFC89B]/40' : 'bg-[#C6A166]/60'
+        }`}
         aria-hidden="true"
       />
 
       {/* Wordmark oficial à direita */}
       <div className="flex flex-col justify-center leading-none">
         <span
-          className={`font-serif font-medium tracking-tight ${currentSize.titleSize}`}
+          className={`font-serif font-semibold tracking-tight ${currentSize.titleSize}`}
           style={{ color: primaryColor }}
         >
           Cartório do Brasileiro
         </span>
         <span
-          className={`font-sans font-semibold uppercase mt-1 ${currentSize.subSize}`}
+          className={`font-sans font-bold uppercase mt-1 ${currentSize.subSize}`}
           style={{ color: goldColor }}
         >
           Assessoria Documental

@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen]);
 
-  // Essential navigation items for desktop to maintain luxurious breathing room
+  // Essential navigation items for desktop
   const desktopNavLinks = [
     { label: 'Serviços', href: '#servicos' },
     { label: 'Soluções', href: '#momentos-de-vida' },
@@ -55,16 +55,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
     { label: 'Dúvidas', href: '#duvidas' },
   ];
 
-  // Full navigation items for the mobile drawer
+  // Full navigation items for mobile
   const mobileNavLinks = [
     { label: 'Início', href: '#hero' },
     { label: 'Serviços Documentais', href: '#servicos' },
     { label: 'Soluções por Momento de Vida', href: '#momentos-de-vida' },
     { label: 'Como Funciona o Atendimento', href: '#como-funciona' },
     { label: 'Sobre o Cartório do Brasileiro', href: '#sobre-nos' },
-    { label: 'Rede de Parceiros', href: '#parceiros' },
+    { label: 'Rede de Especialistas', href: '#parceiros' },
     { label: 'Perguntas Frequentes', href: '#duvidas' },
-    { label: 'Contato Oficial', href: '#contato' },
+    { label: 'Contato Direto', href: '#contato' },
   ];
 
   return (
@@ -72,13 +72,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F2EFE6]/95 backdrop-blur-md shadow-xs py-3 border-b border-[#C6A166]/20'
+          ? 'bg-[#F2EFE6]/98 backdrop-blur-md shadow-xs py-3 border-b border-[#C6A166]/20'
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
       <div className="w-full max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
-          {/* Logo oficial com proporções balanceadas e link seguro */}
+          {/* Logo oficial com proporções balanceadas */}
           <a
             href="#hero"
             className="flex-shrink-0 focus:outline-hidden focus:ring-2 focus:ring-[#C6A166] rounded-sm py-1"
@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
             <BrandLogo size="md" />
           </a>
 
-          {/* Menu Desktop Centralizado com espaçamento generoso */}
+          {/* Menu Desktop */}
           <nav
             className="hidden lg:flex items-center gap-7 xl:gap-9 text-[13.5px] font-medium tracking-wide text-[#0D1B3D]/80"
             aria-label="Navegação Principal"
@@ -105,7 +105,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
 
           {/* Ações Desktop à Direita */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
-            {/* WhatsApp Direto */}
             <a
               id="header-whatsapp-btn"
               href={getWhatsAppUrl()}
@@ -117,7 +116,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
               <span>WhatsApp</span>
             </a>
 
-            {/* CTA Principal */}
             <button
               id="header-cta-btn"
               onClick={() => onOpenTriage()}
@@ -128,33 +126,40 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
             </button>
           </div>
 
-          {/* Botão Menu Mobile */}
+          {/* Botão Menu Mobile no Header */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
               id="mobile-menu-toggle"
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 text-[#0D1B3D] hover:text-[#C6A166] rounded-xl border border-[#0D1B3D]/15 bg-white/90 focus:outline-hidden focus:ring-2 focus:ring-[#C6A166] shadow-2xs cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className={`p-2.5 rounded-xl border transition-all shadow-sm cursor-pointer min-w-[46px] min-h-[46px] flex items-center justify-center ${
+                mobileMenuOpen
+                  ? 'bg-[#0D1B3D] text-white border-[#C6A166] ring-2 ring-[#C6A166]/40'
+                  : 'bg-white/95 text-[#0D1B3D] border-[#0D1B3D]/20 hover:border-[#C6A166]'
+              }`}
               aria-label={mobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
               aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-drawer"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-white stroke-[2.5]" />
+              ) : (
+                <Menu className="w-6 h-6 text-[#0D1B3D] stroke-[2]" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Backdrop e Drawer Mobile */}
+      {/* Drawer Mobile Completo com botão Fechar visível e de alto contraste */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 top-[65px] z-50 lg:hidden"
+          className="fixed inset-0 z-50 lg:hidden flex flex-col justify-start"
           role="dialog"
           aria-modal="true"
         >
-          {/* Overlay escuro */}
+          {/* Overlay com blur */}
           <div
-            className="fixed inset-0 bg-[#0D1B3D]/40 backdrop-blur-xs"
+            className="fixed inset-0 bg-[#0D1B3D]/70 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
@@ -162,34 +167,53 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
           {/* Painel do Drawer */}
           <div
             id="mobile-drawer"
-            className="relative bg-[#F2EFE6] border-b border-[#C6A166]/30 px-5 sm:px-6 py-6 shadow-2xl overflow-y-auto max-h-[calc(100dvh-70px)]"
+            className="relative z-10 bg-[#F2EFE6] border-b-2 border-[#C6A166] shadow-2xl flex flex-col max-h-[92vh] overflow-y-auto"
           >
-            <div className="flex flex-col gap-4 max-w-lg mx-auto">
-              <div className="flex items-center gap-2 pb-3 border-b border-[#0D1B3D]/10 text-xs font-medium text-[#0D1B3D]/80">
+            {/* Barra de Topo do Menu com Logo e Botão Fechar bem visível */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-[#0D1B3D]/10 bg-[#FAF8F3]">
+              <BrandLogo size="sm" />
+              
+              {/* Botão de Fechar Explicito com Texto e Ícone X */}
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#0D1B3D] hover:bg-[#162B5E] text-white text-xs font-semibold uppercase tracking-wider shadow-sm cursor-pointer border border-[#C6A166]/30 transition-all active:scale-95"
+                aria-label="Fechar menu"
+              >
+                <X className="w-4 h-4 text-[#C6A166] stroke-[2.5]" />
+                <span>Fechar</span>
+              </button>
+            </div>
+
+            <div className="p-5 sm:p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-2 pb-2.5 border-b border-[#0D1B3D]/10 text-xs font-medium text-[#0D1B3D]/80">
                 <ShieldCheck className="w-4 h-4 text-[#C6A166] flex-shrink-0" />
                 <span>Assessoria Documental Privada • Orlando, Flórida</span>
               </div>
 
+              {/* Links de Navegação */}
               <nav className="flex flex-col gap-1 text-sm font-medium text-[#0D1B3D]" aria-label="Navegação Mobile">
                 {mobileNavLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2.5 px-3 rounded-lg hover:bg-white/60 hover:text-[#A68249] transition-colors border-b border-[#0D1B3D]/5"
+                    className="py-3 px-3.5 rounded-xl hover:bg-white/80 hover:text-[#0D1B3D] active:bg-[#0D1B3D]/10 font-medium transition-colors flex items-center justify-between group border-b border-[#0D1B3D]/5"
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    <ArrowRight className="w-4 h-4 text-[#C6A166] opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </a>
                 ))}
               </nav>
 
+              {/* Ações de Conversão no Mobile */}
               <div className="flex flex-col gap-3 pt-3 border-t border-[#0D1B3D]/10">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenTriage();
                   }}
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#0D1B3D] hover:bg-[#162B5E] rounded-xl shadow-md cursor-pointer border border-[#C6A166]/30 min-h-[44px]"
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#0D1B3D] hover:bg-[#162B5E] rounded-xl shadow-md cursor-pointer border border-[#C6A166]/30 min-h-[46px]"
                 >
                   <span>Começar minha análise</span>
                   <ArrowRight className="w-4 h-4 text-[#C6A166]" />
@@ -199,10 +223,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
                   href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-[#0D1B3D] bg-white border border-[#0D1B3D]/20 rounded-xl hover:border-[#C6A166] min-h-[44px]"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-[#0D1B3D] bg-white border border-[#0D1B3D]/20 rounded-xl hover:border-[#C6A166] min-h-[46px] shadow-2xs"
                 >
                   <MessageCircle className="w-4 h-4 text-[#2F6B57]" />
-                  <span>Falar no WhatsApp: {BRAND_CONFIG.phone}</span>
+                  <span>Falar no WhatsApp ({BRAND_CONFIG.phone})</span>
                 </a>
               </div>
             </div>
@@ -212,4 +236,3 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
     </header>
   );
 };
-

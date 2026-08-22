@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LIFE_MOMENTS } from '../data/content';
 import { LifeMoment } from '../types';
 import { DynamicIcon } from './DynamicIcon';
-import { ArrowRight, CheckCircle, Sparkles, X, MessageCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Compass, X, MessageCircle } from 'lucide-react';
 import { getWhatsAppUrl } from '../config/brand';
 
 interface LifeMomentsProps {
@@ -39,7 +39,7 @@ export const LifeMoments: React.FC<LifeMomentsProps> = ({ onStartTriage }) => {
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C6A166]/10 border border-[#C6A166]/20 mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#A68249]" />
+            <Compass className="w-3.5 h-3.5 text-[#A68249]" />
             <span className="text-[11px] font-bold tracking-[0.2em] text-[#A68249] uppercase">
               SOLUÇÕES POR MOMENTO DE VIDA
             </span>

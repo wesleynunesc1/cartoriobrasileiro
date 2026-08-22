@@ -3,7 +3,7 @@ import { QUICK_SERVICES } from '../data/content';
 import { ServiceItem } from '../types';
 import { DynamicIcon } from './DynamicIcon';
 import { ServiceDetailModal } from './ServiceDetailModal';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 
 interface QuickServiceFinderProps {
   onStartTriage: (serviceTitle: string) => void;
@@ -18,7 +18,7 @@ export const QuickServiceFinder: React.FC<QuickServiceFinderProps> = ({ onStartT
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C6A166]/10 border border-[#C6A166]/20 mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#A68249]" />
+            <FileText className="w-3.5 h-3.5 text-[#A68249]" />
             <span className="text-[11px] font-bold tracking-[0.2em] text-[#A68249] uppercase">
               O QUE VOCÊ PRECISA RESOLVER HOJE?
             </span>

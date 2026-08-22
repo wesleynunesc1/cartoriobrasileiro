@@ -1,6 +1,6 @@
 import React from 'react';
 import { PROCESS_STEPS } from '../data/content';
-import { ArrowRight, CheckCircle2, MessageSquareText, FileSearch, Cog, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MessageSquareText, FileSearch, Cog, ShieldCheck } from 'lucide-react';
 import { CBMonogram } from './BrandLogo';
 
 interface HowItWorksProps {
@@ -95,7 +95,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onStartTriage }) => {
             onClick={onStartTriage}
             className="inline-flex items-center gap-3 px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#0D1B3D] bg-[#C6A166] hover:bg-[#DFC89B] rounded-xl transition-all shadow-lg hover:shadow-xl cursor-pointer group"
           >
-            <Sparkles className="w-4 h-4 text-[#0D1B3D]" />
+            <ShieldCheck className="w-4 h-4 text-[#0D1B3D]" />
             <span>Iniciar triagem do meu caso</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>

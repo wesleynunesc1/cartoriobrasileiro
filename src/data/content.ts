@@ -201,7 +201,7 @@ export const LIFE_MOMENTS: LifeMoment[] = [
     title: '18 Anos',
     subtitle: 'Entrada na maioridade civil',
     description: 'Alistamento militar obrigatório no exterior + primeiro título de eleitor + emissão de CPF e regularização para a vida adulta conectada ao Brasil.',
-    iconName: 'Sparkles',
+    iconName: 'GraduationCap',
     highlights: ['Alistamento Militar Consular', 'Título de Eleitor Exterior', 'CPF Atualizado', 'Passaporte Adulto'],
     relatedServices: ['servico-militar', 'titulo-eleitor', 'cpf', 'passaporte']
   },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PARTNER_TAGS } from '../data/content';
-import { Network, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Network, ArrowRight, ShieldCheck } from 'lucide-react';
 import { getWhatsAppUrl } from '../config/brand';
 
 export const PartnerNetwork: React.FC = () => {

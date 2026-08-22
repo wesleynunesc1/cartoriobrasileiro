@@ -4,7 +4,6 @@ import {
   ArrowRight,
   ArrowLeft,
   CheckCircle2,
-  Sparkles,
   MessageCircle,
   ShieldCheck,
   Building,
@@ -280,7 +279,7 @@ export const ConversationalTriage: React.FC<ConversationalTriageProps> = ({
         <div className="p-4 sm:p-6 bg-[#F2EFE6]/80 border-b border-[#0D1B3D]/10 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center shadow-xs flex-shrink-0">
-              <Sparkles className="w-5 h-5" />
+              <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <span className="text-[10px] font-bold text-[#A68249] uppercase tracking-[0.2em]">

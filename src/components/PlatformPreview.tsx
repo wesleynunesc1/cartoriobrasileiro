@@ -5,7 +5,6 @@ import {
   Clock,
   ShieldCheck,
   FolderOpen,
-  Sparkles,
   ArrowRight,
   CheckCircle2,
   AlertCircle
@@ -24,7 +23,7 @@ export const PlatformPreview: React.FC<PlatformPreviewProps> = ({ onOpenTriage }
           {/* Coluna Esquerda: Storytelling e Diferenciais (5 colunas) */}
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C6A166]/10 border border-[#C6A166]/20 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-[#A68249]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#A68249]" />
               <span className="text-[11px] font-bold tracking-[0.2em] text-[#A68249] uppercase">
                 EXPERIÊNCIA DIGITAL & HUMANA
               </span>

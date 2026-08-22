@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Compass, ShieldCheck, Sparkles, Building2, Users } from 'lucide-react';
+import { Heart, Compass, ShieldCheck, Building2, Users } from 'lucide-react';
 import { CBMonogram } from './BrandLogo';
 
 export const AboutUs: React.FC = () => {
