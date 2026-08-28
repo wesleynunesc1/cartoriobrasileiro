@@ -141,7 +141,7 @@ export const QUICK_SERVICES: ServiceItem[] = [
       'Revisão de formatação, dados vitais e fidelidade terminológica',
       'Entrega digital segura em alta resolução e envio físico quando solicitado'
     ],
-    iconName: 'Languages',
+    iconName: 'Globe2',
     category: 'internacional',
     triagePreset: 'Traduções'
   },
@@ -345,26 +345,26 @@ export const FEATURED_SERVICES = [
 export const PROCESS_STEPS = [
   {
     number: '01',
-    title: 'Conversa inicial',
-    description: 'Você nos conta o que precisa resolver. Nossa equipe escuta sua necessidade e entende a situação documental.',
+    title: 'Você conta o que precisa',
+    description: 'Diga qual é a sua necessidade documental.',
     tag: 'Acolhimento & Escuta'
   },
   {
     number: '02',
-    title: 'Diagnóstico documental',
-    description: 'Analisamos sua necessidade, conferimos os requisitos e organizamos o melhor caminho dentro do escopo da assessoria.',
+    title: 'Nós analisamos seu caso',
+    description: 'Nossa equipe entende a necessidade e organiza o caminho inicial.',
     tag: 'Mapeamento de Requisitos'
   },
   {
     number: '03',
-    title: 'Execução coordenada',
-    description: 'Nossa equipe organiza as etapas, prepara os formulários administrativos, confere documentos e mantém você informado.',
+    title: 'Organizamos sua documentação',
+    description: 'Preparamos, conferimos e coordenamos as etapas que fazem parte do serviço contratado.',
     tag: 'Organização & Rigor'
   },
   {
     number: '04',
-    title: 'Entrega e acompanhamento',
-    description: 'Você recebe seus documentos prontos e fica sabendo claramente o que acontece em seguida, com total tranquilidade.',
+    title: 'Acompanhamos cada etapa',
+    description: 'Você recebe informações claras sobre andamento e próximos passos.',
     tag: 'Conclusão & Clareza'
   }
 ];

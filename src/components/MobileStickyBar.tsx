@@ -32,7 +32,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onOpenTriage }
           className="flex-1 flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#0D1B3D] active:bg-[#162B5E] rounded-xl shadow-md border border-[#C6A166]/40 cursor-pointer min-h-[44px]"
         >
           <ShieldCheck className="w-3.5 h-3.5 text-[#C6A166]" />
-          <span>Começar análise</span>
+          <span>COMEÇAR MINHA ANÁLISE</span>
           <ArrowRight className="w-3.5 h-3.5 text-[#C6A166]" />
         </button>
 

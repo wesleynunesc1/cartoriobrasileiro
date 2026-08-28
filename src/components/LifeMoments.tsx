@@ -4,6 +4,7 @@ import { LifeMoment } from '../types';
 import { DynamicIcon } from './DynamicIcon';
 import { ArrowRight, CheckCircle, Compass, X, MessageCircle } from 'lucide-react';
 import { getWhatsAppUrl } from '../config/brand';
+import { Link } from 'react-router-dom';
 
 interface LifeMomentsProps {
   onStartTriage: (serviceName: string) => void;
@@ -55,8 +56,8 @@ export const LifeMoments: React.FC<LifeMomentsProps> = ({ onStartTriage }) => {
         </div>
 
         {/* Life Moments Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {LIFE_MOMENTS.map((moment) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {LIFE_MOMENTS.slice(0, 4).map((moment) => (
             <div
               key={moment.id}
               onClick={() => setActiveMoment(moment)}
@@ -91,12 +92,21 @@ export const LifeMoments: React.FC<LifeMomentsProps> = ({ onStartTriage }) => {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#0D1B3D]/10 flex items-center justify-between text-xs font-semibold text-[#A68249] group-hover:text-[#0D1B3D] transition-colors">
-                <span>Ver plano de ação</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#C6A166]" />
+              <div className="mt-6 pt-4 border-t border-[#0D1B3D]/10 flex items-center justify-between text-xs font-semibold text-[#0D1B3D] hover:text-[#C6A166] transition-colors">
+                <span>VER DETALHES</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/momentos-de-vida"
+            className="inline-flex items-center text-sm font-bold text-[#0D1B3D] hover:text-[#C6A166] transition-colors hover:underline decoration-[#C6A166] underline-offset-4"
+          >
+            VER TODOS OS MOMENTOS <ArrowRight className="w-4 h-4 ml-1 transition-transform" />
+          </Link>
         </div>
       </div>
 
@@ -170,7 +180,7 @@ export const LifeMoments: React.FC<LifeMomentsProps> = ({ onStartTriage }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-[#0D1B3D] bg-white border border-[#0D1B3D]/15 rounded-xl hover:border-[#C6A166] min-h-[44px]"
               >
                 <MessageCircle className="w-4 h-4 text-[#2F6B57]" />
-                <span>Conversar no WhatsApp</span>
+                <span>FALAR NO WHATSAPP</span>
               </a>
 
               <button
@@ -181,7 +191,7 @@ export const LifeMoments: React.FC<LifeMomentsProps> = ({ onStartTriage }) => {
                 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-semibold tracking-wider uppercase text-white bg-[#0D1B3D] hover:bg-[#162B5E] rounded-xl shadow-sm cursor-pointer min-h-[44px]"
               >
-                <span>Iniciar Triagem Deste Caso</span>
+                <span>COMEÇAR MINHA ANÁLISE</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#C6A166]" />
               </button>
             </div>

@@ -96,7 +96,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onStartTriage }) => {
             className="inline-flex items-center gap-3 px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#0D1B3D] bg-[#C6A166] hover:bg-[#DFC89B] rounded-xl transition-all shadow-lg hover:shadow-xl cursor-pointer group"
           >
             <ShieldCheck className="w-4 h-4 text-[#0D1B3D]" />
-            <span>Iniciar triagem do meu caso</span>
+            <span>COMEÇAR MINHA ANÁLISE</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

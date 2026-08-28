@@ -10,7 +10,7 @@ interface FinalCTAProps {
 export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenTriage }) => {
   return (
     <section className="py-24 bg-[#0D1B3D] text-white relative overflow-hidden">
-      {/* Monograma CB Gigantesco em Marca d'água */}
+      {/* Background Decorativo */}
       <div
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 pointer-events-none opacity-[0.04] select-none"
         aria-hidden="true"
@@ -26,22 +26,23 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenTriage }) => {
           </span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-6 leading-tight">
-          Vamos organizar seus documentos?
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-6">
+          Você não precisa saber quem procurar.<br />
+          <span className="italic font-normal text-[#C6A166]">Precisa saber com quem contar.</span>
         </h2>
 
-        <p className="text-base sm:text-xl text-white/80 font-sans max-w-2xl mx-auto mb-10 leading-relaxed">
-          Conte o que você precisa resolver. Nós ajudamos a encontrar o melhor caminho documental entre Brasil e Estados Unidos.
+        <p className="text-base sm:text-lg text-white/80 font-sans max-w-2xl mx-auto mb-10">
+          Dê o primeiro passo. Nossa equipe organizará os requisitos, etapas e prazos para você.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-10">
           <button
             id="final-primary-cta"
-            onClick={onOpenTriage}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-xs sm:text-sm font-bold tracking-wider uppercase text-[#0D1B3D] bg-[#C6A166] hover:bg-[#DFC89B] rounded-xl shadow-xl transition-all cursor-pointer group"
+            onClick={() => onOpenTriage()}
+            className="inline-flex items-center gap-3 px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white bg-[#C6A166] hover:bg-[#DFC89B] hover:text-[#0D1B3D] rounded-xl transition-all shadow-xl hover:shadow-2xl cursor-pointer group"
           >
-            <span>Começar minha análise</span>
+            <span>COMEÇAR MINHA ANÁLISE</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -57,9 +58,19 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenTriage }) => {
           </a>
         </div>
 
-        <div className="flex items-center justify-center gap-2 text-xs text-white/60">
-          <ShieldCheck className="w-4 h-4 text-[#C6A166]" />
-          <span>Atendimento seguro, ágil e em português para brasileiros nos EUA.</span>
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-white/60">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#C6A166]" />
+            <span className="text-xs sm:text-sm font-medium text-white/80">
+              Atendimento em Português
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#C6A166]" />
+            <span className="text-xs sm:text-sm font-medium text-white/80">
+              Segurança e Sigilo
+            </span>
+          </div>
         </div>
       </div>
     </section>

@@ -1,108 +1,35 @@
-import React, { useState } from 'react';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { QuickServiceFinder } from './components/QuickServiceFinder';
-import { Benefits } from './components/Benefits';
-import { LifeMoments } from './components/LifeMoments';
-import { FeaturedServices } from './components/FeaturedServices';
-import { HowItWorks } from './components/HowItWorks';
-import { ConversationalTriage } from './components/ConversationalTriage';
-import { PlatformPreview } from './components/PlatformPreview';
-import { ComplianceSection } from './components/ComplianceSection';
-import { PartnerNetwork } from './components/PartnerNetwork';
-import { AboutUs } from './components/AboutUs';
-import { WhoIsItFor } from './components/WhoIsItFor';
-import { FAQSection } from './components/FAQSection';
-import { FinalCTA } from './components/FinalCTA';
-import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { MobileStickyBar } from './components/MobileStickyBar';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { TriageProvider } from './contexts/TriageContext';
+import { MainLayout } from './layouts/MainLayout';
+import { Home } from './pages/Home';
+import { ServicesHub } from './pages/ServicesHub';
+import { CategoryPage } from './pages/CategoryPage';
+import { ConciergePage } from './pages/ConciergePage';
+import { PastaDocumentalPage } from './pages/PastaDocumentalPage';
+import { LifeMomentsPage } from './pages/LifeMomentsPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { PartnersPage } from './pages/PartnersPage';
+import { FAQPage } from './pages/FAQPage';
 
 export default function App() {
-  const [triageOpen, setTriageOpen] = useState(false);
-  const [triagePreset, setTriagePreset] = useState<string | undefined>(undefined);
-
-  const handleOpenTriage = (preset?: string) => {
-    setTriagePreset(preset);
-    setTriageOpen(true);
-  };
-
-  const handleCloseTriage = () => {
-    setTriageOpen(false);
-    setTriagePreset(undefined);
-  };
-
-  const handleExploreServices = () => {
-    const el = document.getElementById('servicos');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#F2EFE6] text-[#0D1B3D] flex flex-col antialiased selection:bg-[#C6A166]/20 selection:text-[#0D1B3D]">
-      {/* Header Sticky */}
-      <Header onOpenTriage={() => handleOpenTriage()} />
-
-      <main className="flex-1">
-        {/* 1. Hero Section */}
-        <Hero
-          onOpenTriage={() => handleOpenTriage()}
-          onExploreServices={handleExploreServices}
-        />
-
-        {/* 2. Quick Service Finder (12 Cards) */}
-        <QuickServiceFinder onStartTriage={(service) => handleOpenTriage(service)} />
-
-        {/* 3. Problem / Benefits (4 Pillars) */}
-        <Benefits />
-
-        {/* 4. Escolha pelo Momento da Sua Vida (11 Moments) */}
-        <LifeMoments onStartTriage={(service) => handleOpenTriage(service)} />
-
-        {/* 5. Serviços em Destaque */}
-        <FeaturedServices onStartTriage={(service) => handleOpenTriage(service)} />
-
-        {/* 6. Como Funciona (Dark Navy #0D1B3D) */}
-        <HowItWorks onStartTriage={() => handleOpenTriage()} />
-
-        {/* 7. Diferencial & Plataforma Digital */}
-        <PlatformPreview onOpenTriage={() => handleOpenTriage()} />
-
-        {/* 8. Compliance & Como Atuamos */}
-        <ComplianceSection />
-
-        {/* 9. Rede de Parceiros Especializada */}
-        <PartnerNetwork />
-
-        {/* 10. Sobre Nós & Manifesto */}
-        <AboutUs />
-
-        {/* 11. Para Quem É */}
-        <WhoIsItFor onStartTriage={(service) => handleOpenTriage(service)} />
-
-        {/* 12. FAQ (Perguntas Frequentes) */}
-        <FAQSection />
-
-        {/* 13. CTA Final */}
-        <FinalCTA onOpenTriage={() => handleOpenTriage()} />
-      </main>
-
-      {/* Footer & Aviso Legal Obrigatório */}
-      <Footer />
-
-      {/* Botão Flutuante de WhatsApp (Desktop) */}
-      <FloatingWhatsApp />
-
-      {/* Barra de Ação Mobile Fixa */}
-      <MobileStickyBar onOpenTriage={() => handleOpenTriage()} />
-
-      {/* Modal da Triagem Conversacional (Concierge Digital) */}
-      <ConversationalTriage
-        isOpen={triageOpen}
-        onClose={handleCloseTriage}
-        initialService={triagePreset}
-      />
-    </div>
+    <TriageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="servicos" element={<ServicesHub />} />
+            <Route path="servicos/:categorySlug" element={<CategoryPage />} />
+            <Route path="concierge-documental" element={<ConciergePage />} />
+            <Route path="pasta-documental-personalizada" element={<PastaDocumentalPage />} />
+            <Route path="momentos-de-vida" element={<LifeMomentsPage />} />
+            <Route path="sobre-nos" element={<AboutUsPage />} />
+            <Route path="rede-de-parceiros" element={<PartnersPage />} />
+            <Route path="faq" element={<FAQPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </TriageProvider>
   );
 }

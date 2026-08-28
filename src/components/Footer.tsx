@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contato" className="bg-[#070E21] text-white border-t border-[#C6A166]/20 pt-16 pb-12">
+    <footer id="contato" className="bg-[#0D1B3D] text-white border-t border-[#C6A166]/20 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Coluna 1: Marca & Descrição (4 colunas) */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { BrandLogo } from './BrandLogo';
 import { BRAND_CONFIG, getWhatsAppUrl } from '../config/brand';
 import { MessageCircle, Menu, X, ArrowRight, ShieldCheck } from 'lucide-react';
@@ -46,25 +46,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen]);
 
+  const location = useLocation();
+
   // Essential navigation items for desktop
   const desktopNavLinks = [
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Soluções', href: '#momentos-de-vida' },
-    { label: 'Como funciona', href: '#como-funciona' },
-    { label: 'Sobre nós', href: '#sobre-nos' },
-    { label: 'Dúvidas', href: '#duvidas' },
+    { label: 'Início', href: '/' },
+    { label: 'Serviços', href: '/servicos' },
+    { label: 'Como funciona', href: '/#como-funciona' },
+    { label: 'Sobre nós', href: '/sobre-nos' },
+    { label: 'Soluções', href: '/momentos-de-vida' },
+    { label: 'Dúvidas', href: '/faq' },
   ];
 
   // Full navigation items for mobile
   const mobileNavLinks = [
-    { label: 'Início', href: '#hero' },
-    { label: 'Serviços Documentais', href: '#servicos' },
-    { label: 'Soluções por Momento de Vida', href: '#momentos-de-vida' },
-    { label: 'Como Funciona o Atendimento', href: '#como-funciona' },
-    { label: 'Sobre o Cartório do Brasileiro', href: '#sobre-nos' },
-    { label: 'Rede de Especialistas', href: '#parceiros' },
-    { label: 'Perguntas Frequentes', href: '#duvidas' },
-    { label: 'Contato Direto', href: '#contato' },
+    { label: 'Início', href: '/' },
+    { label: 'Serviços', href: '/servicos' },
+    { label: 'Como funciona', href: '/#como-funciona' },
+    { label: 'Sobre nós', href: '/sobre-nos' },
+    { label: 'Soluções', href: '/momentos-de-vida' },
+    { label: 'Dúvidas', href: '/faq' },
   ];
 
   return (
@@ -79,13 +80,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
       <div className="w-full max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           {/* Logo oficial com proporções balanceadas */}
-          <a
-            href="#hero"
+          <Link
+            to="/"
             className="flex-shrink-0 focus:outline-hidden focus:ring-2 focus:ring-[#C6A166] rounded-sm py-1"
             aria-label="Cartório do Brasileiro - Página Inicial"
           >
             <BrandLogo size="md" />
-          </a>
+          </Link>
 
           {/* Menu Desktop */}
           <nav
@@ -93,13 +94,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
             aria-label="Navegação Principal"
           >
             {desktopNavLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="relative py-1 transition-colors hover:text-[#0D1B3D] focus:outline-hidden focus:text-[#0D1B3D] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C6A166] hover:after:w-full after:transition-all after:duration-200"
+                to={link.href}
+                className={`relative py-1 transition-colors hover:text-[#0D1B3D] focus:outline-hidden focus:text-[#0D1B3D] after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#C6A166] after:transition-all after:duration-200 ${location.pathname === link.href ? 'text-[#0D1B3D] after:w-full' : 'after:w-0 hover:after:w-full'}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -194,15 +195,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTriage }) => {
               {/* Links de Navegação */}
               <nav className="flex flex-col gap-1 text-sm font-medium text-[#0D1B3D]" aria-label="Navegação Mobile">
                 {mobileNavLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-3 px-3.5 rounded-xl hover:bg-white/80 hover:text-[#0D1B3D] active:bg-[#0D1B3D]/10 font-medium transition-colors flex items-center justify-between group border-b border-[#0D1B3D]/5"
+                    className={`py-3 px-3.5 rounded-xl transition-colors flex items-center justify-between group border-b border-[#0D1B3D]/5 ${location.pathname === link.href ? 'bg-[#0D1B3D]/5 text-[#0D1B3D]' : 'hover:bg-white/80 hover:text-[#0D1B3D] active:bg-[#0D1B3D]/10'}`}
                   >
                     <span>{link.label}</span>
                     <ArrowRight className="w-4 h-4 text-[#C6A166] opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </a>
+                  </Link>
                 ))}
               </nav>
 

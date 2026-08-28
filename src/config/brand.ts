@@ -10,11 +10,10 @@ export const BRAND_CONFIG = {
   primaryCommercialPromise: "Seu tempo é precioso. A burocracia, deixe com a gente.",
   
   // Contatos Oficiais
-  phone: "+1 (689) 808-7772",
-  phoneRaw: "16898087772",
-  phoneSecondary: "+1 (689) 258-2180",
-  whatsappNumber: "16898087772",
-  email: "cartoriodobrasileiro@gmail.com",
+  phone: "+1 (689) 258-2180",
+  phoneRaw: "16892582180",
+  whatsappNumber: "16892582180",
+  email: "contato@cartoriodobrasileiro.com",
   location: "Orlando, Florida, USA",
   websiteUrl: "https://www.cartoriodobrasileiro.com",
 
@@ -36,7 +35,7 @@ export const BRAND_CONFIG = {
   // Redes Sociais
   socialLinks: {
     instagram: "https://instagram.com/cartoriodobrasileiro",
-    whatsapp: "https://wa.me/16898087772"
+    whatsapp: "https://wa.me/16892582180"
   }
 };
 

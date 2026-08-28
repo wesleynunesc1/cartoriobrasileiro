@@ -35,12 +35,12 @@ export const PartnerNetwork: React.FC = () => {
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0D1B3D] tracking-tight mb-4">
-            Uma rede especializada por trás de cada etapa.
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-white tracking-tight leading-tight mb-5">
+            MAIS DO QUE DOCUMENTOS. CONEXÕES CONFIÁVEIS PARA O QUE VOCÊ PRECISA RESOLVER.
           </h2>
 
-          <p className="text-sm sm:text-base text-[#0D1B3D]/75 font-sans leading-relaxed">
-            Algumas situações exigem atividades reguladas ou especialidades externas. Quando necessário, podemos conectar você a profissionais independentes habilitados.
+          <p className="text-sm sm:text-base text-white/75 font-sans leading-relaxed">
+            Quando uma necessidade ultrapassa o escopo da assessoria documental, podemos conectar você a profissionais independentes habilitados para aquela atividade. Não queremos apenas indicar. Queremos conectar você às pessoas certas.
           </p>
         </div>
 

@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
 
             {/* Descrição Institucional Clara */}
             <p className="text-sm sm:text-base lg:text-lg text-[#0D1B3D]/80 leading-relaxed font-sans max-w-2xl mb-8">
-              Assessoria documental para brasileiros nos Estados Unidos. Organizamos, orientamos, conferimos e acompanhamos seu processo para que você não precise perder horas tentando entender sozinho cada exigência.
+              Assessoria documental para brasileiros nos Estados Unidos. Organizamos, orientamos, conferimos e acompanhamos cada etapa para você avançar com mais clareza e tranquilidade.
             </p>
 
             {/* CTAs Primário e Secundário */}
@@ -53,18 +53,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
                 onClick={() => onOpenTriage()}
                 className="inline-flex items-center justify-center gap-3 px-7 py-4 text-xs sm:text-sm font-semibold tracking-wider text-white uppercase bg-[#0D1B3D] hover:bg-[#162B5E] active:bg-[#070E21] rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer border border-[#C6A166]/40 group min-h-[48px]"
               >
-                <span>Quero resolver meu documento</span>
+                <span>Começar minha análise</span>
                 <ArrowRight className="w-4 h-4 text-[#C6A166] group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button
+              <a
                 id="hero-secondary-cta"
-                onClick={onExploreServices}
+                href="https://wa.me/16892582180"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-xs sm:text-sm font-semibold tracking-wide text-[#0D1B3D] bg-white/90 hover:bg-white active:bg-gray-100 border border-[#0D1B3D]/20 hover:border-[#C6A166] rounded-xl transition-all shadow-2xs cursor-pointer min-h-[48px]"
               >
-                <Compass className="w-4 h-4 text-[#C6A166]" />
-                <span>Descobrir o que preciso</span>
-              </button>
+                <MessageCircle className="w-4 h-4 text-[#2F6B57]" />
+                <span>Falar no WhatsApp</span>
+              </a>
             </div>
 
             {/* Indicadores de Confiança / Trust Badges */}
@@ -90,120 +92,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
             </div>
           </div>
 
-          {/* Coluna Direita: Composição Visual Editorial Brasil ↔ EUA (5 colunas) */}
+          {/* Coluna Direita: Fotografia Humana & Elementos (5 colunas) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Moldura Principal de Vidro e Fundo Escultural */}
-              <div className="relative rounded-2xl bg-white/70 backdrop-blur-md p-6 sm:p-8 border border-[#C6A166]/30 shadow-xl overflow-hidden">
+              {/* Moldura da Fotografia */}
+              <div className="relative rounded-2xl bg-white/70 backdrop-blur-md border border-[#C6A166]/30 shadow-xl overflow-hidden aspect-[4/5] flex items-center justify-center">
+                {/* Imagem de Fundo (Exemplo de atendimento/família) */}
+                <img 
+                  src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" 
+                  alt="Atendimento Cartório do Brasileiro"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3D]/80 via-[#0D1B3D]/20 to-transparent" />
+                
                 {/* Linha decorativa dourada no topo */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D1B3D] via-[#C6A166] to-[#0D1B3D]" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D1B3D] via-[#C6A166] to-[#0D1B3D] z-10" />
 
-                {/* Header do Card Conceitual */}
-                <div className="flex items-center justify-between pb-5 border-b border-[#0D1B3D]/10">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-[#0D1B3D] flex items-center justify-center text-[#C6A166]">
-                      <Globe className="w-4 h-4" />
+                {/* Card Informativo sobreposto */}
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center">
+                      <ShieldCheck className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#0D1B3D] uppercase tracking-wider">
-                        Eixo Documental
-                      </p>
-                      <p className="text-[11px] text-[#0D1B3D]/60">Estados Unidos ↔ Brasil</p>
+                      <p className="text-sm font-bold text-[#0D1B3D]">Atendimento Humanizado</p>
+                      <p className="text-xs text-[#0D1B3D]/70">Especialistas prontos para te ajudar</p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide bg-[#2F6B57]/10 text-[#2F6B57] border border-[#2F6B57]/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2F6B57] animate-pulse" />
-                    Atendimento Ativo
-                  </span>
-                </div>
-
-                {/* Representação Visual da Ponte entre os 2 Países */}
-                <div className="my-6 py-4 px-4 bg-[#F2EFE6]/60 rounded-xl border border-[#0D1B3D]/5 relative">
-                  <div className="flex items-center justify-between relative z-10">
-                    {/* Nó EUA */}
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-11 h-11 rounded-full bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center font-serif font-bold text-sm shadow-sm">
-                        EUA
-                      </div>
-                      <span className="text-[11px] font-bold text-[#0D1B3D] mt-2">Flórida & EUA</span>
-                      <span className="text-[9px] text-[#0D1B3D]/60">Residência / Emissão</span>
-                    </div>
-
-                    {/* Linha Curva Pontilhada com Ícone de Avião / Trânsito Documental */}
-                    <div className="flex-1 mx-3 flex flex-col items-center justify-center relative">
-                      <div className="w-full border-t-2 border-dashed border-[#C6A166]/60 relative flex items-center justify-center">
-                        <div className="absolute -top-3 bg-[#0D1B3D] text-[#C6A166] p-1 rounded-full shadow-xs">
-                          <Plane className="w-3.5 h-3.5 rotate-90" />
-                        </div>
-                      </div>
-                      <span className="text-[9px] font-semibold text-[#A68249] uppercase tracking-widest mt-3">
-                        Ponte de Confiança
-                      </span>
-                    </div>
-
-                    {/* Nó Brasil */}
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-11 h-11 rounded-full bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center font-serif font-bold text-sm shadow-sm">
-                        BR
-                      </div>
-                      <span className="text-[11px] font-bold text-[#0D1B3D] mt-2">Brasil</span>
-                      <span className="text-[9px] text-[#0D1B3D]/60">Cartórios / Órgãos</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Mini Cards Flutuantes de Serviços em Ação */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-[#0D1B3D]/10 shadow-2xs hover:border-[#C6A166]/50 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-md bg-[#0D1B3D]/5 text-[#0D1B3D]">
-                        <FileCheck className="w-4 h-4 text-[#C6A166]" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-[#0D1B3D]">Conferência & Triagem</p>
-                        <p className="text-[11px] text-[#0D1B3D]/65">Prevenção de erros e retrabalho</p>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-medium text-[#2F6B57] bg-[#2F6B57]/10 px-2 py-0.5 rounded-sm">
-                      100% Supervisionado
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-[#0D1B3D]/10 shadow-2xs hover:border-[#C6A166]/50 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-md bg-[#0D1B3D]/5 text-[#0D1B3D]">
-                        <ShieldCheck className="w-4 h-4 text-[#C6A166]" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-[#0D1B3D]">Apostila & Notary Public</p>
-                        <p className="text-[11px] text-[#0D1B3D]/65">Validade legal nos limites da lei</p>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-medium text-[#0D1B3D]/70 bg-[#0D1B3D]/5 px-2 py-0.5 rounded-sm">
-                      Orlando, FL
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white border border-[#0D1B3D]/10 shadow-2xs hover:border-[#C6A166]/50 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-md bg-[#0D1B3D]/5 text-[#0D1B3D]">
-                        <Clock className="w-4 h-4 text-[#C6A166]" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-[#0D1B3D]">Economia de Tempo</p>
-                        <p className="text-[11px] text-[#0D1B3D]/65">Você não enfrenta a burocracia sozinho</p>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-medium text-[#A68249] bg-[#C6A166]/10 px-2 py-0.5 rounded-sm">
-                      Concierge
-                    </span>
-                  </div>
-                </div>
-
-                {/* Footer do Card */}
-                <div className="mt-5 pt-4 border-t border-[#0D1B3D]/10 flex items-center justify-between text-[11px] text-[#0D1B3D]/70">
-                  <span>Assessoria Privada Especializada</span>
-                  <span className="font-semibold text-[#0D1B3D]">Orlando • Flórida</span>
                 </div>
               </div>
             </div>
