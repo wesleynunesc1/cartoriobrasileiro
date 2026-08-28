@@ -18,6 +18,8 @@ export interface LifeMoment {
   iconName: string;
   highlights: string[];
   relatedServices: string[];
+  imageUrl?: string;
+  imageBadge?: string;
 }
 
 export interface FaqItem {

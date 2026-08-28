@@ -93,32 +93,53 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
           </div>
 
           {/* Coluna Direita: Fotografia Humana & Elementos (5 colunas) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Moldura da Fotografia */}
-              <div className="relative rounded-2xl bg-white/70 backdrop-blur-md border border-[#C6A166]/30 shadow-xl overflow-hidden aspect-[4/5] flex items-center justify-center">
-                {/* Imagem de Fundo (Exemplo de atendimento/família) */}
+          <div className="lg:col-span-5 relative flex flex-col gap-4">
+            {/* Foto Superior Larga */}
+            <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[21/9]">
+              <img 
+                src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?auto=format&fit=crop&q=80&w=800" 
+                alt="Famílias"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3D] via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span className="text-white text-xs font-semibold">Pessoas e famílias cuidadas com respeito</span>
+                <span className="text-[10px] font-bold text-[#DFC89B] tracking-wider uppercase">ORLANDO, FL</span>
+              </div>
+            </div>
+
+            {/* Grid Inferior (2 Fotos) */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
                 <img 
-                  src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" 
-                  alt="Atendimento Cartório do Brasileiro"
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=400" 
+                  alt="Conferência"
+                  className="absolute inset-0 w-full h-full object-cover grayscale-[30%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3D] via-transparent to-transparent opacity-90" />
+                <span className="absolute bottom-3 left-3 text-white text-[11px] font-semibold leading-tight pr-2">Conferência Rigorosa</span>
+              </div>
+              
+              <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+                <img 
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32f7?auto=format&fit=crop&q=80&w=400" 
+                  alt="Acolhimento"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3D]/80 via-[#0D1B3D]/20 to-transparent" />
-                
-                {/* Linha decorativa dourada no topo */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D1B3D] via-[#C6A166] to-[#0D1B3D] z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3D] via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 text-white text-[11px] font-semibold leading-tight pr-2">Acolhimento Humano</span>
+              </div>
+            </div>
 
-                {/* Card Informativo sobreposto */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-[#0D1B3D]">Atendimento Humanizado</p>
-                      <p className="text-xs text-[#0D1B3D]/70">Especialistas prontos para te ajudar</p>
-                    </div>
-                  </div>
+            {/* Card Flutuante Abaixo */}
+            <div className="mt-2 bg-white rounded-xl p-3.5 shadow-sm border border-[#0D1B3D]/10 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#0D1B3D] text-[#C6A166] flex items-center justify-center shadow-inner">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-bold text-[#0D1B3D] leading-tight">Assessoria Documental Privada</span>
+                  <span className="text-[10px] text-[#0D1B3D]/60 leading-tight">Atendimento em todos os 50 estados dos EUA</span>
                 </div>
               </div>
             </div>

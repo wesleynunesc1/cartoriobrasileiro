@@ -197,40 +197,48 @@ export const QUICK_SERVICES: ServiceItem[] = [
 
 export const LIFE_MOMENTS: LifeMoment[] = [
   {
-    id: '18-anos',
-    title: '18 Anos',
-    subtitle: 'Entrada na maioridade civil',
-    description: 'Alistamento militar obrigatório no exterior + primeiro título de eleitor + emissão de CPF e regularização para a vida adulta conectada ao Brasil.',
-    iconName: 'GraduationCap',
-    highlights: ['Alistamento Militar Consular', 'Título de Eleitor Exterior', 'CPF Atualizado', 'Passaporte Adulto'],
-    relatedServices: ['servico-militar', 'titulo-eleitor', 'cpf', 'passaporte']
+    id: 'nascimento-bebe',
+    title: 'Nasceu um filho nos EUA?',
+    subtitle: 'Nascimento de filho nos EUA',
+    description: 'Seu bebê nasceu nos EUA e você deseja garantir a nacionalidade brasileira originária, CPF e passaporte com tranquilidade.',
+    iconName: 'Baby',
+    highlights: ['Registro de Nascimento', 'Inscrição de CPF', 'Passaporte Brasileiro'],
+    relatedServices: ['nascimento', 'passaporte', 'cpf'],
+    imageUrl: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=600',
+    imageBadge: 'Cidadania e Vínculo com o Brasil'
   },
   {
     id: 'casamento-moment',
-    title: 'Casamento',
+    title: 'Vai se casar?',
     subtitle: 'União civil internacional',
-    description: 'Organização documental para brasileiros que se casaram nos EUA. Registro consular, tradução, certidão de casamento e atualização de nome nos documentos brasileiros.',
-    iconName: 'Heart',
-    highlights: ['Registro de Casamento Consular', 'Apostila da Certidão Americana', 'Atualização de Nome no CPF e Passaporte', 'Traslado de Cartório'],
-    relatedServices: ['casamento', 'apostila-haia', 'passaporte', 'cpf']
+    description: 'Orientação para casamento civil na Flórida ou registro consular do casamento celebrado nos EUA para validade plena no Brasil.',
+    iconName: 'HeartHandshake',
+    highlights: ['Casamento Civil nos EUA', 'Tradução Certificada', 'Apostilamento de Haia'],
+    relatedServices: ['casamento', 'apostila-haia', 'passaporte'],
+    imageUrl: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600',
+    imageBadge: 'Formalização civil e patrimonial'
   },
   {
-    id: 'nascimento-bebe',
-    title: 'Bebê / Nascimento',
-    subtitle: 'Nascimento de filho nos EUA',
-    description: 'O dossiê completo para registrar seu filho como cidadão brasileiro originário, primeiro passaporte da criança e autorizações de viagem dos genitores.',
-    iconName: 'Baby',
-    highlights: ['Certidão de Nascimento Consular', 'Primeiro Passaporte Brasileiro', 'CPF do Menor', 'Autorização de Viagem'],
-    relatedServices: ['nascimento', 'passaporte', 'cpf', 'procuracoes']
+    id: '18-anos',
+    title: 'Completou 18 anos?',
+    subtitle: 'Entrada na maioridade civil',
+    description: 'Jovens brasileiros completando a maioridade no exterior precisam manter sua situação cívica, eleitoral e militar em dia.',
+    iconName: 'GraduationCap',
+    highlights: ['Título de Eleitor no Exterior', 'Serviço Militar/Dispensa', 'Atualização de CPF'],
+    relatedServices: ['servico-militar', 'titulo-eleitor', 'cpf'],
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600',
+    imageBadge: 'Transição para a vida adulta cívica'
   },
   {
-    id: 'familia-em-dia',
-    title: 'Família em Dia',
-    subtitle: 'Revisão e alinhamento do núcleo familiar',
-    description: 'Check-up completo e organização simultânea de passaportes, CPFs, certidões e situações eleitorais de pais e filhos para viagens e tranquilidade.',
-    iconName: 'Users',
-    highlights: ['Auditoria Documental da Família', 'Renovação Coordenada de Passaportes', 'Certidões Atualizadas no Brasil', 'Pasta Digital Centralizada'],
-    relatedServices: ['passaporte', 'cpf', 'titulo-eleitor', 'certidoes']
+    id: 'procuracao-brasil-moment',
+    title: 'Precisa resolver algo no Brasil?',
+    subtitle: 'Representação legal à distância',
+    description: 'Assuntos bancários, compra e venda de imóveis, heranças ou emissão de certidões sem a necessidade de viajar ao Brasil.',
+    iconName: 'Building2',
+    highlights: ['Procurações para uso no Brasil', 'Busca e 2ª Via de Certidões', 'Apostila de Haia'],
+    relatedServices: ['procuracoes', 'apostila-haia', 'notary-public'],
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600',
+    imageBadge: 'Gestão à distância com segurança'
   },
   {
     id: 'passaporte-moment',
