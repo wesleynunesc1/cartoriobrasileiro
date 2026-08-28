@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
             {/* Foto Superior Larga */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[21/9]">
               <img 
-                src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?auto=format&fit=crop&q=80&w=800" 
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" 
                 alt="Famílias"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTriage, onExploreServices }) =
               
               <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
                 <img 
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32f7?auto=format&fit=crop&q=80&w=400" 
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400" 
                   alt="Acolhimento"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
