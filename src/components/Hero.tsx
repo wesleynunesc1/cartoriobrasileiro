@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Compass, ShieldCheck, FileCheck, Globe, Plane, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, ShieldCheck, FileCheck, Globe, Plane, Clock, MessageCircle } from 'lucide-react';
 import { CBMonogram } from './BrandLogo';
 
 interface HeroProps {
