@@ -2,7 +2,7 @@
 
 @theme {
   --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --color-navy: #0D1B3D;
   --color-navy-dark: #070E21;
   --color-navy-light: #162B5E;
